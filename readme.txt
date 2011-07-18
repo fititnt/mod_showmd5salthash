@@ -1,0 +1,1 @@
+Module that just show MD5 with Salt hash

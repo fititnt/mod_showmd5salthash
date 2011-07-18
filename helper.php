@@ -1,6 +1,6 @@
 <?php
 /*
- * @package         Mod_werandonmessage
+ * @package         Mod_showmd5salthash
  * @author          Emerson Rocha Luiz ( emerson@webdesign.eng.br - @fititnt -  http://fititnt.org )
  * @copyright       Copyright (C) 2011 Joomla! Coders Brazil ( @JCoderBR - http://jcoder.org )
  * @license         GPL3
@@ -10,20 +10,16 @@ defined('_JEXEC') or die;
 
 
 /*
- * Return one randon result from table #__mod_werandonmessage
- * return object
+ * Return MD5 Salt hash
+ * @var         string      $plainpassword: string to obain hash
+ * @return      string      $result
  */
-function getRandonText(){
-    $db = &JFactory::getDBO();
-    $query = $db->getQuery(true);
-    $query->select('*')
-          ->from('#__mod_werandonmessage')
-          ->where('published = 1')
-          ->order('RAND()')//chose one randon
-          //->limit('1') //@todo: testar mais tarde para retornar sometne um valor
-            ;
-    $db->setQuery($query);
-    $result = $db->loadObject();
+function getMD5SaltHash($plainpassword){
+
+    jimport('joomla.user.helper');
+    $salt = JUserHelper::genRandomPassword(32);
+    $crypt = JUserHelper::getCryptedPassword($plainpassword, $salt);
+    $result = $crypt . ':' . $salt;
     
     return $result;
 }
