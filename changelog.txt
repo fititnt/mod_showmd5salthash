@@ -1,2 +1,4 @@
+2011-07-19: 0.2beta
+->Ready for tests
 2011-07-18: 0.1alpha
 -> Start

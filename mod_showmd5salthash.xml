@@ -3,14 +3,14 @@
 	type="module"
 	method="upgrade"
 	version="1.6">
-	<name>MOD_SHOWMD5SALTHASH</name>
+	<name>MOD_SHOWMD5HASHSALT</name>
 	<author>Emerson Rocha Luiz</author>
 	<creationDate>July 2011</creationDate>
 	<copyright>Copyright (C) Joomla! Coders Brazil - @JCoderBR. All rights reserved.</copyright>
 	<license>GNU General Public License version 3</license>
 	<authorEmail>emerson@webdesign.eng.br</authorEmail>
 	<authorUrl>http://fititnt.org</authorUrl>
-	<version>0.1alpha</version>
+	<version>0.2beta</version>
 	<description>MOD_SHOWMD5HASHSALT_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_showmd5salthash">mod_showmd5salthash.php</filename>
@@ -19,24 +19,23 @@
                 <filename>readme.txt</filename>
                 <filename>changelog.txt</filename>
 		<folder>tmpl</folder>
-                <folder>css</folder>
                 <folder>languages</folder><!-- This makes one copy of languages. Is not really necessary-->
 	</files>
 	<languages folder="languages">
 		<language tag="en-GB">en-GB/en-GB.mod_showmd5salthash.ini</language>
 		<language tag="en-GB">en-GB/en-GB.mod_showmd5salthash.sys.ini</language>
-		<language tag="pt-BR">pt-BR/en-GB.mod_showmd5salthash.ini</language>
-		<language tag="pt-BR">pt-BR/en-GB.mod_showmd5salthash.sys.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_showmd5salthash.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_showmd5salthash.sys.ini</language>
 	</languages>
 		
 	<config>
 		<fields name="params">
 			<fieldset name="basic">
 				<field
-					name="showauthor"
+					name="advanced"
 					type="radio"
-					label="MOD_SHOWMD5SALTHASH_SHOW_AUTHOR"
-					description="MOD_SHOWMD5SALTHASH_SHOW_AUTHOR_DESC"
+					label="MOD_SHOWMD5SALTHASH_SHOW_MORE_OPTIONS_LABEL"
+					description="MOD_SHOWMD5SALTHASH_SHOW_MORE_OPTIONS_DESC"
 					default="1">
 					<option
 						value="0">JNo</option>

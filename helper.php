@@ -23,3 +23,32 @@ function getMD5SaltHash($plainpassword){
     
     return $result;
 }
+/*
+ * Return MD5
+ * @var         string      $plainpassword: string to obain hash
+ * @return      string      $result
+ */
+function getMd5Encode($plainpassword){
+    $result = md5($plainpassword);
+    return $result;
+}
+
+/*
+ * Return Base64 Encoded
+ * @var         string      $plainpassword: string to obain hash
+ * @return      string      $result
+ */
+function getBase64Encode($plainpassword){
+    $result = base64_encode($plainpassword);
+    return $result;
+}
+
+/*
+ * Return Crypt hash
+ * @var         string      $plainpassword: string to obain hash
+ * @return      string      $result
+ */
+function getCryptEncode($plainpassword){
+    $result = crypt($plainpassword);
+    return $result;
+}

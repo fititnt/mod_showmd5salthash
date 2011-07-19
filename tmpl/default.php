@@ -9,18 +9,22 @@
 defined('_JEXEC') or die;
 ?>
 
-
-
-
-
-
-
-<div class="werandonmessage<?php echo $moduleclass_sfx ?>">	
-    <?php if ($params->get('showtitle', 1) != 0 && $randonresult->title != ''):?>
-        <span id="werandonmessage-title"><?php echo $randonresult->title; ?></span>
-    <?php endif;?>    
-    <div id="werandonmessage-message"><?php echo $randonresult->message; ?></div>    
-    <?php if ($params->get('showauthor', 1) != 0 && $randonresult->author != ''):?>
-        <span id="werandonmessage-author"><?php echo $randonresult->author; ?></span>
-    <?php endif;?>
+<div class="showmd5salhash<?php echo $moduleclass_sfx; ?>">
+    <div class="showmd5salhash-form">
+        <form target="<?php echo JURI::current(); ?>" type="post">
+            <input name="passwordtomd5salthash" size="80" value="<?php echo $passwordtomd5salthash; ?>" />
+            <input type="submit" value="<?php echo JText::_('MOD_SHOWMD5SALTHASH_SEND'); ?>"/>
+        </form>
+    </div>
+    <div class="showmd5salhash-encoded">
+         <hr />
+         <?php echo JText::_('MOD_SHOWMD5SALTHASH_RESULT'); ?>
+         <?php echo JText::_('MOD_SHOWMD5SALTHASH_MD5WITHSALT'); ?>:<br /><input name="passwordtomd5salthash" size="80"  value="<?php echo $hash; ?>"/>
+         <?php if($params->get('advabced', 1)): ?>
+         <br /> <?php echo JText::_('MOD_SHOWMD5SALTHASH_MD5_ENCODED'); ?>: <br /><input size="80" value="<?php echo $md5Encoded; ?>"/>
+         <br /> <?php echo JText::_('MOD_SHOWMD5SALTHASH_BASE64_ENCODED'); ?>: <br /><input size="80" value="<?php echo $base64Encoded; ?>"/>
+         <br /> <?php echo JText::_('MOD_SHOWMD5SALTHASH_CRYPT_ENCODED'); ?>: <br /><input size="80" value="<?php echo $CryptEncoded; ?>"/>
+         <?php endif; ?>
+    </div>
 </div>
+
