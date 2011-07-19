@@ -20,7 +20,7 @@ defined('_JEXEC') or die;
          <hr />
          <?php echo JText::_('MOD_SHOWMD5SALTHASH_RESULT'); ?>
          <?php echo JText::_('MOD_SHOWMD5SALTHASH_MD5WITHSALT'); ?>:<br /><input name="passwordtomd5salthash" size="80"  value="<?php echo $hash; ?>"/>
-         <?php if($params->get('advabced', 1)): ?>
+         <?php if($params->get('advanced', 1)): ?>
          <br /> <?php echo JText::_('MOD_SHOWMD5SALTHASH_MD5_ENCODED'); ?>: <br /><input size="80" value="<?php echo $md5Encoded; ?>"/>
          <br /> <?php echo JText::_('MOD_SHOWMD5SALTHASH_BASE64_ENCODED'); ?>: <br /><input size="80" value="<?php echo $base64Encoded; ?>"/>
          <br /> <?php echo JText::_('MOD_SHOWMD5SALTHASH_CRYPT_ENCODED'); ?>: <br /><input size="80" value="<?php echo $CryptEncoded; ?>"/>
